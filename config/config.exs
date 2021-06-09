@@ -11,6 +11,10 @@ config :exmeals,
   ecto_repos: [Exmeals.Repo],
   generators: [binary_id: true]
 
+config :exmeals, Exmeals.Repo,
+  migration_primary_key: [type: :binary_id],
+  migration_foreign_key: [type: :binary_id]
+
 # Configures the endpoint
 config :exmeals, ExmealsWeb.Endpoint,
   url: [host: "localhost"],

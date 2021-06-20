@@ -8,7 +8,7 @@ defmodule Exmeals.Meals.Meal do
   @required_params [:descricao, :data, :calorias]
 
   schema "meals" do
-    field :desricao, :string
+    field :descricao, :string
     field :data, :naive_datetime
     field :calorias, :integer
 

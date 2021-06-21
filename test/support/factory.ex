@@ -19,4 +19,12 @@ defmodule Exmeals.Factory do
       id: "07d0c2ba-c86b-4ebf-b8ca-32d761e049af"
     }
   end
+
+  def meal_update_params_factory do
+    %{
+      "id" => "",
+      "descricao" => "Arroz com bacalhau",
+      "calorias" => 1300
+    }
+  end
 end

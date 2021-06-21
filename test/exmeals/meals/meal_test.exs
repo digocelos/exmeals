@@ -28,4 +28,29 @@ defmodule Exmeals.Meals.MealTest do
       assert errors_on(response) == expected_response
     end
   end
+
+  describe "changeset/2" do
+    test "When all params are valid, returns a valid changeset" do
+      meal = build(:meal)
+      params = build(:meal_params)
+
+      response = Meal.changeset(meal, params)
+
+      assert %Changeset{changes: %{descricao: "Arroz com ovo"}, valid?: true} = response
+    end
+
+    test "When a params is invalid, returns an error" do
+      meal = build(:meal)
+      params = build(:meal_params, %{"descricao" => "a", "calorias" => -10})
+
+      response = Meal.changeset(meal, params)
+
+      expected_response = %{
+        calorias: ["must be greater than or equal to 0"],
+        descricao: ["should be at least 6 character(s)"]
+      }
+
+      assert errors_on(response) == expected_response
+    end
+  end
 end

@@ -17,6 +17,16 @@ defmodule Exmeals.Meals.Meal do
 
   def changeset(params) do
     %__MODULE__{}
+    |> cast_meal(params)
+  end
+
+  def changeset(meal, params) do
+    meal
+    |> cast_meal(params)
+  end
+
+  defp cast_meal(meal, params) do
+    meal
     |> cast(params, @required_params)
     |> validate_required(@required_params)
     |> validate_length(:descricao, min: 6)

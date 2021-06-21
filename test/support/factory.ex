@@ -6,7 +6,7 @@ defmodule Exmeals.Factory do
   def meal_params_factory do
     %{
       "descricao" => "Arroz com ovo",
-      "data" => ~N[2021-06-21 23:00:01],
+      "data" => "2021-06-21 23:00:01",
       "calorias" => 600
     }
   end

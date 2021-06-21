@@ -7,6 +7,8 @@ defmodule Exmeals.Meals.Meal do
 
   @required_params [:descricao, :data, :calorias]
 
+  @derive {Jason.Encoder, only: [:id, :descricao, :data, :calorias]}
+
   schema "meals" do
     field :descricao, :string
     field :data, :naive_datetime

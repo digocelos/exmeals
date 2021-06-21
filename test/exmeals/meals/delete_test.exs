@@ -21,7 +21,7 @@ defmodule Exmeals.Meals.DeleteTest do
     test "When there are invalid params, returns an error" do
       response = Delete.call("00000000-0000-0000-0000-000000000000")
 
-      assert {:error, %Error{result: "Meal not foundx", status: :not_found}} = response
+      assert {:error, %Error{result: "Meal not found", status: :not_found}} = response
     end
   end
 end
